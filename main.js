@@ -64,6 +64,14 @@ function toggleDone(id, done) {
     .catch(err => alert("Oooooo nimadur xato ketdi bro" + err));
 }
 
+document.querySelector(".add-btn").onclick = function () {
+  const input = document.querySelector(".add-task-input");
+  const text = input.value.trim();
+  if (text) {
+    addTask(text);
+    input.value = "";
+  }
+};
 function addUi() {
   const taskList = document.querySelector(".task-item");
   taskList.innerHTML = "";
@@ -109,14 +117,6 @@ function addUi() {
   updateProgress();
 }
 
-document.querySelector(".add-btn").onclick = function () {
-  const input = document.querySelector(".add-task-input");
-  const text = input.value.trim();
-  if (text) {
-    addTask(text);
-    input.value = "";
-  }
-};
 
 function updateProgress() {
   const doneCount = tasks.filter(t => t.done).length;
