@@ -8,7 +8,6 @@ function getTime() {
     if (m < 10) m = "0" + m;
     return h + ":" + m;
 }
-
 function fetchTasks() {
   fetch(API)
     .then(res => res.json())
@@ -18,6 +17,11 @@ function fetchTasks() {
     })
     .catch(err => alert("Oooooo nimadur xato ketdi bro:" + err));
 }
+
+
+
+
+
 
 function addTask(text) {
   const newTask = {
@@ -41,6 +45,7 @@ function deleteTask(id) {
     .catch(err => alert("Oooooo nimadur xato ketdi bro" + err));
 }
 
+
 function editTask(id, newText) {
   fetch(`${API}/${id}`, {
     method: "PUT",
@@ -53,7 +58,6 @@ function editTask(id, newText) {
     .then(() => fetchTasks())
     .catch(err => alert("Oooooo nimadur xato ketdi bro" + err));
 }
-
 function toggleDone(id, done) {
   fetch(`${API}/${id}`, {
     method: "PUT",
@@ -63,6 +67,12 @@ function toggleDone(id, done) {
     .then(() => fetchTasks())
     .catch(err => alert("Oooooo nimadur xato ketdi bro" + err));
 }
+
+
+
+
+
+
 
 document.querySelector(".add-btn").onclick = function () {
   const input = document.querySelector(".add-task-input");
@@ -89,7 +99,6 @@ function addUi() {
     li.querySelector('input[type="checkbox"]').onchange = function () {
       toggleDone(task.id, this.checked);
     };
-
     li.querySelector('.edit-btn').onclick = function () {
       const ninput = document.createElement("input");
       ninput.type = "text";
@@ -118,6 +127,9 @@ function addUi() {
 }
 
 
+
+
+
 function updateProgress() {
   const doneCount = tasks.filter(t => t.done).length;
   const totalCount = tasks.length;
@@ -125,5 +137,4 @@ function updateProgress() {
   document.querySelector(".progress-label span:last-child").textContent = percent + "%";
   document.querySelector(".progress-fill").style.width = percent + "%";
 }
-
 fetchTasks();
