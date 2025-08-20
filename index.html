@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task List</title>
+  <link rel="stylesheet" href="./styele.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <div class="task-card">
+    <h2>Task List</h2>
+    
+    <div class="task-header">
+      <h3>Checklist Items</h3>
+      <input class="add-task-input" type="text" placeholder="Add new tasks">
+      <button class="add-btn" type="submit">+</button>
+    </div>
+
+    <ul class="task-item">
+      <input type="checkbox">
+      <p class="task-text">Darcon</p>
+      <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+      <button class="delete-btn">x</button>
+    </ul>
+
+    <div class="progress-section">
+      <div class="progress-label">
+        <span>Progress</span>
+        <span>70%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./main.js"></script>
+
+</body>
+</html>
